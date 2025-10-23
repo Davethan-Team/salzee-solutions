@@ -11,7 +11,9 @@
         'Daily Trust' => 'assets/images/Daily-Trust-logo.jpg',
         'Microsoft' => 'assets/images/Microsoft_Logo.png',
         'The Knowledge Academy' => 'assets/images/The Knowledge Academy.png',
-        'DataLead Africa' => 'assets/images/DataLead-logo.svg'
+        '3P Consulting' =>  'assets/images/3P Consulting.webp',
+        'DataLead Africa' => 'assets/images/DataLead-logo.svg',
+        'Davethan Logo' => 'assets/images/davethan_logo.webp',
     ];
 
     // --- NEW: Service data array for the Homepage - Concise Summaries ---
@@ -20,22 +22,22 @@
         [
             'title' => 'IT Consultancy',
             'summary' => 'Strategic guidance and expert planning to align technology directly with your long-term business goals for sustainable growth.',
-            'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-teal" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-8V5l-8-3-8 3v9c0 4 8 8 8 8Z"/><path d="m9 12 2 2 4-4"/></svg>',
+            'icon' => '<i class="fas fa-laptop-code text-brand-teal icon-uniform"></i>',
         ],
         [
             'title' => 'Managed IT Services',
             'summary' => 'Comprehensive, outsourced support and reliable solutions to keep your IT systems running smoothly, efficiently, and securely 24/7.',
-            'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-teal" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><path d="M6 6h.001"/><path d="M6 18h.001"/></svg>',
+            'icon' => '<i class="fas fa-cogs text-brand-teal icon-uniform"></i>',
         ],
         [
             'title' => 'Professional & Technical Services',
             'summary' => 'Specialist, hands-on expertise to solve complex operational and technical challenges, including process optimization and project management.',
-            'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-teal" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4"/><path d="M2 14v4c0 1.1.9 2 2 2h7"/><path d="m14 18 5 5m0-5-5 5"/></svg>',
+            'icon' => '<i class="fas fa-tools text-brand-teal icon-uniform"></i>',
         ],
         [
             'title' => 'Training & Education',
             'summary' => 'Empowering individuals and teams with engaging, practical training to build core digital skills in data analysis, software, and project management.',
-            'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-teal" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V5H6.5A2.5 2.5 0 0 0 4 7.5v12Z"/><path d="M12 2v4"/></svg>',
+            'icon' => '<i class="fas fa-chalkboard-teacher text-brand-teal icon-uniform"></i>',
         ],
     ];
     // --- END NEW SERVICE DATA ---
@@ -83,6 +85,10 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Lighter shadow for homepage */
     }
 
+    .icon-uniform {
+        font-size: 2rem; /* Adjust this value as needed */
+      }
+
     /* 6. Scroll Reveal Base State (Matching services.php quality) */
     .scroll-reveal {
         opacity: 0;
@@ -98,13 +104,12 @@
     .partner-logo {
         height: 40px; /* Consistent height for all logos */
         width: auto;
-        opacity: 0.6; /* Subtle appearance */
-        filter: grayscale(100%); /* Elegant grayscale */
+        filter: grayscale(0%); /* Elegant grayscale */
         transition: all 0.3s ease-in-out;
     }
     .partner-logo:hover {
         opacity: 1;
-        filter: grayscale(0%); /* Color on hover */
+        filter: grayscale(100%); /* Color on hover */
     }
     
     /* Global Container Padding Utility */
@@ -142,12 +147,12 @@
 
                 <!-- CTAs -->
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="services.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white font-bold rounded-lg hover:bg-brand-teal-dark transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
+                    <a href="services.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
                         Explore Our Services
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
                     </a>
-                    <a href="contact_us.php" class="inline-flex items-center justify-center px-8 py-4 border-2 border-brand-teal text-brand-teal font-bold rounded-lg hover:bg-brand-teal hover:text-white transition duration-150 font-heading">
-                        Get a Consultation
+                    <a href="contact_us.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
+                        Book a Consultation
                     </a>
                 </div>
             </div>
@@ -167,11 +172,11 @@
     <!-- 2. Services Section: The Four Pillars - Professional Briefing -->
     <section class="bg-white py-16 md:py-24">
         <div class="max-w-7xl mx-auto container-padding">
-            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-charcoal mb-4 text-center scroll-reveal">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-teal mb-4 text-center scroll-reveal">
                 Our Core Service Pillars
             </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto text-center mb-12 font-body scroll-reveal">
-                We empower your growth through four core areas of expertise. Click any card to explore the full details.
+                We empower your growth through four core areas of expertise.
             </p>
 
             <!-- Services Grid (4 columns on desktop) -->
@@ -202,7 +207,7 @@
 
             <!-- CTA to Services Page -->
             <div class="text-center mt-12 scroll-reveal">
-                <a href="services.php" class="inline-flex items-center justify-center px-6 py-3 border-2 border-brand-teal text-brand-teal font-bold rounded-lg hover:bg-brand-teal hover:text-white transition duration-150 font-heading">
+                <a href="services.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
                     View All Services & Details
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </a>
@@ -225,7 +230,6 @@
 
             <!-- Text Content - Scroll Reveal -->
             <div class="scroll-reveal">
-                <p class="text-brand-teal font-heading text-lg font-semibold uppercase mb-2">Our Foundation</p>
                 <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-charcoal leading-tight mb-4">
                     Your Trusted Partner for <span class="text-brand-teal">Technology and Growth</span>
                 </h2>
@@ -236,7 +240,7 @@
                     Our experience spans digital transformation, IT consultancy, policy research, and capacity building—giving us a unique ability to design approaches that are practical today and future-ready for tomorrow.
                 </p>
                 
-                <a href="about_us.php" class="inline-flex items-center justify-center px-6 py-3 bg-brand-charcoal text-white font-bold rounded-lg hover:bg-brand-teal transition duration-150 shadow-md font-heading">
+                <a href="about_us.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
                     Learn More About Us
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </a>
@@ -247,12 +251,12 @@
     <!-- 4. Trusted Partners / Client Logos Section -->
     <section class="bg-white py-16 md:py-24">
         <div class="max-w-7xl mx-auto container-padding">
-            <h2 class="font-heading text-2xl font-bold text-gray-500 mb-10 text-center uppercase tracking-wider scroll-reveal">
+            <h2 class="font-heading text-2xl font-bold text-brand-charcoal mb-10 text-center uppercase tracking-wider scroll-reveal">
                 Trusted by Leading Organizations
             </h2>
             
             <!-- Partner Logo Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center items-center scroll-reveal">
+            <div class="flex grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center items-center scroll-reveal">
                 <?php foreach ($partners as $name => $path): ?>
                     <div class="flex items-center justify-center w-full h-20">
                         <img 
@@ -279,7 +283,7 @@
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 justify-center sm:space-x-6">
                 <!-- Primary CTA - White background for contrast -->
-                <a href="contact_us.php" class="flex items-center justify-center px-8 py-4 bg-white text-brand-charcoal font-bold rounded-lg hover:bg-gray-100 transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
+                <a href="contact_us.php" class="flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 font-heading">
                     Start Your Journey
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
