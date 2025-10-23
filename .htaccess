@@ -1,0 +1,15 @@
+# Turn on the Rewrite Engine
+RewriteEngine On
+RewriteBase /
+
+# 1. REMOVE /index.php from the homepage (Permanent Redirect)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ / [R=301,L]
+
+# 2. REMOVE .php file extensions (Internal Rewrite)
+# Check if the requested URI is not a directory
+RewriteCond %{REQUEST_FILENAME} !-d
+# Check if a .php file with the requested URI name exists
+RewriteCond %{REQUEST_FILENAME}\.php -f
+# Internally serve the .php file without changing the URL
+RewriteRule ^([^\.]+)$ $1.php [L]
