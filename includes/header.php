@@ -41,13 +41,15 @@ $nav_links = [
     <!-- Description meta tag for SEO -->
     <meta name="description" content="Salzee Solutions Ltd: Expert IT consultancy, policy research, and capacity building services to simplify technology and empower business growth.">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+
     <!-- Preload Fonts for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!--Favicon-->
-    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -102,7 +104,7 @@ $nav_links = [
             <!-- Logo (Left Side) -->
             <a href="index.php" class="flex items-center space-x-2">
                 <!-- IMPORTANT: Updated image path as requested by the client -->
-                <img src="assets/images/Salzee Logo for light bg full size clear bg.webp" alt="Salzee Solutions Logo" class="h-10">
+                <img src="assets\images\Salzee logo horizontal for light backgrounds.png" alt="Salzee Solutions Logo" class="h-10">
             </a>
 
             <!-- Desktop Navigation (Center) -->

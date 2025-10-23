@@ -7,6 +7,8 @@ $nav_links = [
     'services' => ['text' => 'Services', 'url' => 'services.php'],
     'why_trust_us' => ['text' => 'Why Trust Us', 'url' => 'why_trust_us.php'],
     'contact_us' => ['text' => 'Contact Us', 'url' => 'contact_us.php'],
+    'Privacy Policy' => ['text' =>  'Privacy Policy',   'url'   =>  'privacy_policy.php'],
+    'Terms and Conditions' => ['text' =>  'Terms and Conditions',   'url'   =>  'terms.php'],
 ];
 ?>
 
@@ -25,7 +27,7 @@ $nav_links = [
                 <div class="col-span-2 md:col-span-1">
                     <a href="index.php" class="flex items-center space-x-3 flex-shrink-0">
                         <!-- IMPORTANT: Corrected the image path to use forward slashes (/) for universal web compatibility -->
-                        <img src="assets/images/Salzee Logo for light bg full size clear bg.webp" alt="Salzee Solutions Logo" class="h-10 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x50/F9F9F9/0097A7?text=SALZEE';">
+                        <img src="assets\images\Salzee logo horizontal for dark backgrounds.png" alt="Salzee Solutions Logo" class="h-10 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x50/F9F9F9/0097A7?text=SALZEE';">
                     </a>
                     <p class="text-gray-400 text-sm mb-4 mt-4 leading-relaxed">
                         Simplifying technology. Empowering businesses and individuals.
