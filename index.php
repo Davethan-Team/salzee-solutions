@@ -2,6 +2,7 @@
     // Define the current page for active navigation link styling
     $current_page = 'home'; // Set to 'home' as this is the index page
     // Include the standard header for navigation, metadata, and styling setup
+    // NOTE: 'header.php' contains the clean_link() function and base path detection.
     include 'includes/header.php';
 
     // Partner data array (NOTE: This array can be moved to a separate config file if the project scales)
@@ -147,11 +148,13 @@
 
                 <!-- CTAs -->
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="services.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
+                    <!-- CTA 1: Explore Our Services -->
+                    <a href="<?php echo clean_link('services'); ?>" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
                         Explore Our Services
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
                     </a>
-                    <a href="contact_us.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
+                    <!-- CTA 2: Book a Consultation -->
+                    <a href="<?php echo clean_link('contact_us'); ?>" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
                         Book a Consultation
                     </a>
                 </div>
@@ -183,7 +186,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <?php $delay = 100; // Staggered delay for animation ?>
                 <?php foreach ($services_data_pillars as $service): ?>
-                    <a href="services.php" class="service-pillar-card bg-brand-background p-6 rounded-xl shadow-md flex items-start text-left scroll-reveal" data-delay="<?php echo $delay; ?>">
+                    <!-- CTA: Service Pillar Link (All link to the main services page) -->
+                    <a href="<?php echo clean_link('services'); ?>" class="service-pillar-card bg-brand-background p-6 rounded-xl shadow-md flex items-start text-left scroll-reveal" data-delay="<?php echo $delay; ?>">
                         
                         <!-- Icon Column (Teal Accent) -->
                         <div class="p-3 bg-white rounded-lg shadow-inner mr-4 flex-shrink-0">
@@ -207,7 +211,7 @@
 
             <!-- CTA to Services Page -->
             <div class="text-center mt-12 scroll-reveal">
-                <a href="services.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
+                <a href="<?php echo clean_link('services'); ?>" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
                     View All Services & Details
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </a>
@@ -240,7 +244,8 @@
                     Our experience spans digital transformation, IT consultancy, policy research, and capacity building—giving us a unique ability to design approaches that are practical today and future-ready for tomorrow.
                 </p>
                 
-                <a href="about_us.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
+                <!-- CTA: Learn More About Us -->
+                <a href="<?php echo clean_link('about_us'); ?>" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
                     Learn More About Us
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </a>
@@ -282,15 +287,15 @@
 
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 justify-center sm:space-x-6">
-                <!-- Primary CTA - White background for contrast -->
-                <a href="contact_us.php" class="flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 font-heading">
+                <!-- Primary CTA - Start Your Journey -->
+                <a href="<?php echo clean_link('contact_us'); ?>" class="flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 font-heading">
                     Start Your Journey
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                     </svg>
                 </a>
-                <!-- Secondary CTA - Bordered, subtle hover -->
-                <a href="why_trust_us.php" class="flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 font-heading">
+                <!-- Secondary CTA - Why Choose Salzee? -->
+                <a href="<?php echo clean_link('why_trust_us'); ?>" class="flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 font-heading">
                     Why Choose Salzee?
                 </a>
             </div>

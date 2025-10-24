@@ -11,7 +11,7 @@ $service_pillars = [
     [
         'id' => 'it_consultancy',
         'title' => 'IT Consultancy',
-        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-8V5l-8-3-8 3v9c0 4 8 8 8 8Z"/><path d="m9 12 2 2 4-4"/></svg>',
+        'icon' => '<i class="fas fa-laptop-code text-brand-teal icon-uniform"></i>',
         'summary' => 'Strategic guidance to align technology with your business goals. We act as a trusted partner for individuals and businesses seeking to use technology effectively.',
         'modal_content' => [
             'headline' => 'Strategic Guidance & Alignment',
@@ -28,7 +28,7 @@ $service_pillars = [
     [
         'id' => 'it_services',
         'title' => 'IT Services',
-        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><path d="M6 6h.001"/><path d="M6 18h.001"/></svg>',
+        'icon' => '<i class="fas fa-cogs text-brand-teal icon-uniform"></i>',
         'summary' => 'Reliable ongoing support and comprehensive solutions to keep your systems running smoothly. Ideal for Small and Medium Enterprises.',
         'modal_content' => [
             'headline' => 'Seamless Support. Sustainable Growth.',
@@ -44,7 +44,7 @@ $service_pillars = [
     [
         'id' => 'professional_tech',
         'title' => 'Professional & Technical Services',
-        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4"/><path d="M2 14v4c0 1.1.9 2 2 2h7"/><path d="m14 18 5 5m0-5-5 5"/></svg>',
+        'icon' => '<i class="fas fa-tools text-brand-teal icon-uniform"></i>',
         'summary' => 'Specialist expertise to tackle complex technical or operational challenges, solving problems efficiently and effectively.',
         'modal_content' => [
             'headline' => 'Expert Solutions for Complex Operations',
@@ -61,7 +61,7 @@ $service_pillars = [
     [
         'id' => 'training_education',
         'title' => 'Training & Education',
-        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V5H6.5A2.5 2.5 0 0 0 4 7.5v12Z"/><path d="M12 2v4"/></svg>',
+        'icon' => '<i class="fas fa-chalkboard-teacher text-brand-teal icon-uniform"></i>',
         'summary' => 'Empowering individuals and teams with practical, engaging training to build digital skills and expertise for a technology-driven world.',
         'modal_content' => [
             'headline' => 'Building Capacity. Driving Proficiency.',
@@ -126,6 +126,10 @@ foreach ($service_pillars as $pillar) {
         transform: translateY(-8px) scale(1.01); /* Subtle 3D lift effect (non-flat) */
         box-shadow: 0 15px 25px -5px rgba(51, 51, 51, 0.15), 0 4px 6px -2px rgba(51, 51, 51, 0.08); /* Pronounced shadow on hover */
     }
+
+    .icon-uniform {
+        font-size: 2rem; /* Adjust this value as needed */
+    }
     
     /* Global scroll-reveal styles for sections */
     .scroll-reveal {
@@ -187,7 +191,7 @@ foreach ($service_pillars as $pillar) {
                     Technology Made Simple. <span class="text-brand-teal">Solutions Made for You.</span>
                 </h1>
                 <p class="text-xl text-gray-700 max-w-xl font-body font-normal">
-                    We provide simple, reliable and effective solutions that just work for you
+                    We provide simple, reliable and effective solutions that just work for you.
                 </p>
             </div>
             
@@ -204,9 +208,9 @@ foreach ($service_pillars as $pillar) {
     </section>
 
     <!-- 2. Services Grid - Main Pillars (Four Columns on Desktop) -->
-    <section class="bg-white py-16 md:py-24">
+    <section id="service-pillar" class="bg-white py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-charcoal mb-12 text-center scroll-reveal">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-teal mb-12 text-center scroll-reveal">
                 Our Core Service Pillars
             </h2>
 
@@ -222,7 +226,7 @@ foreach ($service_pillars as $pillar) {
                             onclick="openModal('<?php echo $pillar['id']; ?>')"
                         >
                             <!-- Icon (Teal Circle Background) -->
-                            <div class="p-4 mb-4 rounded-full bg-brand-teal shadow-xl">
+                            <div class="p-3 bg-white rounded-lg shadow-inner mr-4 flex-shrink-0">
                                 <?php echo $pillar['icon']; ?>
                             </div>
                             
@@ -259,7 +263,7 @@ foreach ($service_pillars as $pillar) {
                 We combine deep technical expertise with real-world business insight to deliver solutions that make a lasting impact.
             </p>
 
-            <a href="why_trust_us.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white font-bold rounded-xl hover:bg-brand-teal-dark transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
+            <a href="<?php echo clean_link('why_trust_us'); ?>" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-charcoal border-brand-charcoal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
                 See Our Approach and Values
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </a>
@@ -275,7 +279,7 @@ foreach ($service_pillars as $pillar) {
             </p>
 
             <div class="flex justify-center">
-                <a href="contact_us.php" class="flex items-center justify-center px-8 py-4 bg-brand-charcoal text-white font-bold rounded-xl hover:bg-brand-teal transition duration-300 shadow-xl transform hover:scale-[1.02] font-heading">
+                <a href="<?php echo clean_link('contact_us'); ?>" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-brand-teal font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
                     Start a Conversation
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
@@ -308,7 +312,7 @@ foreach ($service_pillars as $pillar) {
 
         <!-- Modal CTA -->
         <div class="mt-8 pt-6 border-t border-gray-100">
-             <a href="contact_us.php" class="inline-flex items-center justify-center px-6 py-3 bg-brand-teal text-white font-bold rounded-lg hover:bg-teal-700 transition duration-150 shadow-md font-heading">
+             <a href="<?php echo clean_link('contact_us'); ?>" class="inline-flex items-center justify-center px-6 py-3 bg-brand-teal text-white font-bold rounded-lg hover:bg-teal-700 transition duration-150 shadow-md font-heading">
                 Discuss This Service
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />

@@ -32,7 +32,7 @@
           We combine deep technical expertise with real-world business insight to deliver solutions that make a lasting impact. Our experience spans digital transformation, IT consultancy, policy research, programme management, and capacity building – giving us a unique ability to design approaches that are practical today and future-ready for tomorrow. And because technology never stands still, neither do we. We’re always learning, adapting, and innovating – so you stay ahead.
         </p>
 
-        <a href="contact_us.php" class="inline-flex items-center text-brand-teal font-semibold hover:text-brand-teal-dark transition duration-150">
+        <a href="<?php echo clean_link('contact_us'); ?>" class="inline-flex items-center text-brand-teal font-semibold hover:text-brand-teal-dark transition duration-150">
           Talk to our Strategists
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
         </a>
@@ -159,7 +159,7 @@
       </p>
 
       <div class="flex justify-center">
-        <a href="contact_us.php" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-white font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
+        <a href="<?php echo clean_link('contact_us'); ?>" class="inline-flex items-center justify-center px-8 py-4 bg-brand-teal text-white border-2 border-white font-bold rounded-lg hover:bg-white hover:text-brand-teal transition duration-150 shadow-xl transform hover:scale-[1.02] font-heading">
           Schedule a Consultation
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
