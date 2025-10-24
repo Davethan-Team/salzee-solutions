@@ -2,13 +2,14 @@
 // NOTE: $nav_links array should ideally be defined in header.php and available here, 
 // but it is redefined here for safety if the user prefers standalone includes.
 $nav_links = [
-    'home' => ['text' => 'Home', 'url' => 'index.php'],
-    'about_us' => ['text' => 'About Us', 'url' => 'about_us.php'],
-    'services' => ['text' => 'Services', 'url' => 'services.php'],
-    'why_trust_us' => ['text' => 'Why Trust Us', 'url' => 'why_trust_us.php'],
-    'contact_us' => ['text' => 'Contact Us', 'url' => 'contact_us.php'],
-    'Privacy Policy' => ['text' =>  'Privacy Policy',   'url'   =>  'privacy_policy.php'],
-    'Terms and Conditions' => ['text' =>  'Terms and Conditions',   'url'   =>  'terms.php'],
+    // We now pass the slug to clean_link() for dynamic path creation
+    'home' => ['text' => 'Home', 'url' => clean_link('home')], 
+    'about_us' => ['text' => 'About Us', 'url' => clean_link('about_us')],
+    'services' => ['text' => 'Services', 'url' => clean_link('services')],
+    'why_trust_us' => ['text' => 'Why Trust Us', 'url' => clean_link('why_trust_us')],
+    'contact_us' => ['text' => 'Contact Us', 'url' => clean_link('contact_us')],
+    'Privacy Policy' => ['text' =>  'Privacy Policy',   'url'   =>  clean_link('privacy_policy')],
+    'Terms and Conditions' => ['text' =>  'Terms and Conditions',   'url'   =>  clean_link('terms')],
 ];
 ?>
 
@@ -25,7 +26,7 @@ $nav_links = [
                 
                 <!-- Column 1: Logo & Tagline/Mission -->
                 <div class="col-span-2 md:col-span-1">
-                    <a href="index.php" class="flex items-center space-x-3 flex-shrink-0">
+                    <a href="<?php echo clean_link('home'); ?>" class="flex items-center space-x-3 flex-shrink-0">
                         <!-- IMPORTANT: Corrected the image path to use forward slashes (/) for universal web compatibility -->
                         <img src="assets\images\Salzee logo horizontal for dark backgrounds.png" alt="Salzee Solutions Logo" class="h-10 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x50/F9F9F9/0097A7?text=SALZEE';">
                     </a>
@@ -55,10 +56,10 @@ $nav_links = [
                     <h3 class="font-heading text-lg font-semibold mb-4 text-brand-teal">Our Services</h3>
                     <ul class="space-y-3 text-sm">
                         <!-- Example services based on the content document -->
-                        <li><a href="services.php#it-consultancy" class="text-gray-400 hover:text-brand-teal transition duration-150">IT Consultancy</a></li>
-                        <li><a href="services.php#policy-research" class="text-gray-400 hover:text-brand-teal transition duration-150">Policy Research</a></li>
-                        <li><a href="services.php#capacity-building" class="text-gray-400 hover:text-brand-teal transition duration-150">Capacity Building & Training</a></li>
-                        <li><a href="services.php#digital-transformation" class="text-gray-400 hover:text-brand-teal transition duration-150">Digital Transformation</a></li>
+                        <li><a href="<?php echo clean_link('services'); ?>#service-pillar" class="text-gray-400 hover:text-brand-teal transition duration-150">IT Consultancy</a></li>
+                        <li><a href="<?php echo clean_link('services'); ?>#service-pillar" class="text-gray-400 hover:text-brand-teal transition duration-150">Policy Research</a></li>
+                        <li><a href="<?php echo clean_link('services'); ?>#service-pillar" class="text-gray-400 hover:text-brand-teal transition duration-150">Capacity Building & Training</a></li>
+                        <li><a href="<?php echo clean_link('services'); ?>#service-pillar" class="text-gray-400 hover:text-brand-teal transition duration-150">Digital Transformation</a></li>
                     </ul>
                 </div>
 

@@ -1,33 +1,79 @@
 <?php
-// 1. Get the current page filename (e.g., 'index.php' or 'about_us.php')
-$current_filename = basename($_SERVER['REQUEST_URI']);
-
-// 2. Define a map to convert the filename to the short key used in your $nav_links array
-$filename_to_key_map = [
-    'index.php'     => 'home',
-    'about_us.php'  => 'about_us',
-    'services.php'  => 'services',
-    'why_trust_us.php'=> 'why_trust_us',
-    'contact_us.php'=> 'contact_us',
-];
-
-// 3. Set $current_page key.
-$current_page_clean = strtok($current_filename, '?'); 
-
-if (isset($filename_to_key_map[$current_page_clean])) {
-    $current_page = $filename_to_key_map[$current_page_clean];
-} else {
-    // Default to 'home' if the file is unknown (e.g., index.php without query string)
-    $current_page = 'home';
+// --- HELPER FUNCTION: Get Dynamic Base Path ---
+/**
+ * Determines the base path (e.g., '/', or '/salzee/') based on the server environment.
+ * This is crucial for environments like XAMPP where the project sits in a subdirectory.
+ * @return string The correct base path with a trailing slash.
+ */
+function get_base_path() {
+    // 1. Get the path part of the URI
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    
+    // 2. Define the expected local subdirectory name (must match your folder name)
+    $local_subdir_name = 'salzee';
+    
+    // 3. Check if the local subdirectory name is present in the URI path
+    if (strpos($uri_path, '/' . $local_subdir_name) !== false) {
+        // If found, return the base path for local development (e.g., /salzee/)
+        return '/' . $local_subdir_name . '/';
+    } else {
+        // If not found (live VPS root or direct localhost), return the simple root path (e.g., /)
+        return '/';
+    }
 }
 
-// 4. Define the navigation links
+$base_path = get_base_path();
+
+
+// --- NEW HELPER FUNCTION: Generate Clean URL Link ---
+/**
+ * Generates a full, clean URL for a given page slug.
+ * * @param string $slug The clean name of the page (e.g., 'about_us', 'contact_us').
+ * @return string The full path (e.g., '/salzee/contact_us' or '/contact_us').
+ */
+function clean_link($slug) {
+    global $base_path;
+    // Special handling for the home page slug
+    if ($slug === 'home' || $slug === 'index') {
+        return $base_path;
+    }
+    // For all other pages, append the slug to the base path
+    return $base_path . $slug;
+}
+
+
+// --- 1. ACTIVE PAGE DETECTION (Clean URL Logic) ---
+
+// Get the path part of the URI.
+$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+// Clean the URI path: remove leading/trailing slashes and the dynamic base path.
+$uri_path = strtolower(trim($uri_path, '/'));
+
+// Remove the base path (e.g., remove 'salzee/' from 'salzee/about_us')
+if (strpos($uri_path, trim($base_path, '/')) === 0 && trim($base_path, '/') !== '') {
+    $uri_path = substr($uri_path, strlen(trim($base_path, '/')) + 1);
+}
+
+
+// --- Determine the current page key (the slug) ---
+if (empty($uri_path) || $uri_path === 'index.php') {
+    // Case 1: Root URL (base_path/ or base_path/index.php) -> Home
+    $current_page = 'home';
+} else {
+    // Case 2: Clean URL (e.g., about_us) or direct .php link
+    // Remove the '.php' extension to get the clean slug for comparison
+    $current_page = str_replace('.php', '', $uri_path);
+}
+
+// --- 2. Define the navigation links (USING THE NEW clean_link HELPER) ---
 $nav_links = [
-    'home' => ['text' => 'Home', 'url' => 'index.php'],
-    'about_us' => ['text' => 'About Us', 'url' => 'about_us.php'],
-    'services' => ['text' => 'Services', 'url' => 'services.php'],
-    'why_trust_us' => ['text' => 'Why Trust Us', 'url' => 'why_trust_us.php'],
-    'contact_us' => ['text' => 'Contact Us', 'url' => 'contact_us.php'],
+    // We now pass the slug to clean_link() for dynamic path creation
+    'home' => ['text' => 'Home', 'url' => clean_link('home')], 
+    'about_us' => ['text' => 'About Us', 'url' => clean_link('about_us')],
+    'services' => ['text' => 'Services', 'url' => clean_link('services')],
+    'why_trust_us' => ['text' => 'Why Trust Us', 'url' => clean_link('why_trust_us')],
+    'contact_us' => ['text' => 'Contact Us', 'url' => clean_link('contact_us')],
 ];
 ?>
 <!DOCTYPE html>
@@ -48,7 +94,7 @@ $nav_links = [
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -59,7 +105,7 @@ $nav_links = [
             font-family: 'Lato', sans-serif; /* Body font */
         }
         .font-heading {
-            font-family: 'Poppins', sans-serif; /* Heading font */
+            font-family: 'Poppins', 'Lato', sans-serif; /* Heading font */
         }
 
         /* Custom mobile menu transition for smooth opening/closing */
@@ -102,8 +148,8 @@ $nav_links = [
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
             
             <!-- Logo (Left Side) -->
-            <a href="index.php" class="flex items-center space-x-2">
-                <!-- IMPORTANT: Updated image path as requested by the client -->
+            <a href="<?php echo clean_link('home'); ?>" class="flex items-center space-x-2">
+                <!-- NOW using clean_link('home') -->
                 <img src="assets\images\Salzee logo horizontal for light backgrounds.png" alt="Salzee Solutions Logo" class="h-10">
             </a>
 
@@ -111,7 +157,7 @@ $nav_links = [
             <nav class="hidden lg:flex space-x-8 font-heading text-lg">
                 <?php
                 foreach ($nav_links as $key => $link) {
-                    // Check if the current link key matches the current page
+                    // Check if the current link key matches the detected active page key
                     $is_active = ($key === $current_page);
                     
                     // Apply active and hover styles based on the brand guide (Teal color)
@@ -126,7 +172,7 @@ $nav_links = [
 
             <!-- Desktop CTA Button (Right Side) -->
             <div class="hidden lg:block">
-                <a href="contact_us.php" class="px-6 py-2 bg-brand-teal text-white font-bold rounded-lg hover:bg-brand-teal-dark transition duration-150 shadow-lg font-heading">
+                <a href="<?php echo clean_link('contact_us'); ?>" class="px-6 py-2 bg-brand-teal text-white font-bold rounded-lg hover:bg-brand-teal-dark transition duration-150 shadow-lg font-heading">
                     Get Started
                 </a>
             </div>
@@ -160,7 +206,7 @@ $nav_links = [
             </nav>
             <!-- CTA Button (Mobile) -->
             <div class="px-6 pt-5">
-                <a href="contact_us.php" class="inline-flex items-center justify-center w-full px-6 py-3 bg-brand-teal text-white font-bold rounded-lg hover:bg-brand-teal-dark transition duration-150 shadow-lg font-heading">
+                <a href="<?php echo clean_link('contact_us'); ?>" class="inline-flex items-center justify-center w-full px-6 py-3 bg-brand-teal text-white font-bold rounded-lg hover:bg-brand-teal-dark transition duration-150 shadow-lg font-heading">
                     Get Started
                 </a>
             </div>
