@@ -92,8 +92,16 @@ $nav_links = [
 
     <!-- Canonical -->
     <link rel="canonical" href="https://www.salzeeglobal.com/" />
+
     <!-- Robots -->
     <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Salzee Solutions Ltd - Simplifying Technology, Empowering businesses and individuals" />
+    <meta property="og:description" content="Expert IT consultancy, research, and training for smarter business growth." />
+    <meta property="og:image" content="https://www.salzeeglobal.com/assets/images/Salzee_og_image.jpg" />
+    <meta property="og:url" content="https://www.salzeeglobal.com/" />
+    <meta property="og:type" content="website" />
 
     <!-- Preload Fonts for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
