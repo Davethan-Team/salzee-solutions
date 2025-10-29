@@ -95,6 +95,9 @@ $nav_links = [
 
     <!-- Robots -->
     <meta name="robots" content="index, follow" />
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="QtHuQxHdgl_W2fsRI7mz7ul0hafSY-tu574hzWAUgfY" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Salzee Solutions Ltd - Simplifying Technology, Empowering businesses and individuals" />
