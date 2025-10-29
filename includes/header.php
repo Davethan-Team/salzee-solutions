@@ -99,9 +99,21 @@ $nav_links = [
     <!-- Open Graph -->
     <meta property="og:title" content="Salzee Solutions Ltd - Simplifying Technology, Empowering businesses and individuals" />
     <meta property="og:description" content="Expert IT consultancy, research, and training for smarter business growth." />
-    <meta property="og:image" content="https://www.salzeeglobal.com/assets/images/Salzee_og_image.jpg" />
+    <meta property="og:image" content="https://www.salzeeglobal.com/assets/images/about_us.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:alt" content="Salzee Solutions Ltd - Technology consultancy and training" />
     <meta property="og:url" content="https://www.salzeeglobal.com/" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Salzee Solutions Ltd" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Salzee Solutions Ltd - Simplifying Technology, Empowering Growth" />
+    <meta name="twitter:description" content="Expert IT consultancy, research, and training for smarter business growth." />
+    <meta name="twitter:image" content="https://www.salzeeglobal.com/assets/images/about_us.webp" />
+    <meta name="twitter:image:type" content="image/webp" />
+    <meta name="twitter:image:alt" content="Salzee Solutions Ltd - Technology consultancy and training" />
+
 
     <!-- Preload Fonts for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,6 +121,7 @@ $nav_links = [
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -132,7 +145,25 @@ $nav_links = [
             transition: max-height 0.5s ease-in;
         }
     </style>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Salzee Solutions Ltd",
+  "url": "https://www.salzeeglobal.com",
+  "logo": "https://www.salzeeglobal.com/assets/images/Salzee Logo for light bg full size clear bg.webp",
+  "sameAs": [
+    "https://www.linkedin.com/in/salzee-solutions-ltd-48a480390/",
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+44 (0)141 270852",
+    "contactType": "customer service",
+    "areaServed": "NG, UK",
+    "availableLanguage": "English"
+  }
+}
+</script>
     <!-- Tailwind Configuration (Brand Colors) -->
     <script>
         tailwind.config = {
