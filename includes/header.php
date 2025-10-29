@@ -90,6 +90,11 @@ $nav_links = [
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.ico">
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.salzeeglobal.com/" />
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
     <!-- Preload Fonts for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
