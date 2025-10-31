@@ -164,7 +164,7 @@
             <div class="scroll-reveal order-first lg:order-last">
                 <!-- Placeholder for a professional, non-flat IT/strategy image -->
                 <img 
-                    src="assets\images\homepage_hero_result.webp" 
+                    src="assets/images/homepage_hero_result.webp" 
                     alt="Abstract image representing strategic IT planning" 
                     class="rounded-xl shadow-2xl w-full h-auto object-cover border border-gray-100" 
                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/0097A7/FFFFFF?text=Strategic+IT+Consultancy';">
@@ -226,7 +226,7 @@
             <!-- Image Placeholder (Placeholder for team/trust) - Scroll Reveal -->
             <div class="scroll-reveal">
                 <img 
-                    src="assets\images\tusted_partner.webp" 
+                    src="assets/images/tusted_partner.webp" 
                     alt="Professional team meeting and strategy" 
                     class="rounded-xl shadow-2xl w-full h-auto object-cover border border-gray-200" 
                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/333333/0097A7?text=Trusted+Partner+%7C+Team';">

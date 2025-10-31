@@ -41,7 +41,7 @@
       <!-- Right Visual (Placeholder for Professional Image) -->
       <div class="order-2 lg:order-2 flex justify-center">
         <!-- Ready for a professional, full-width image of collaboration or strategy -->
-        <img src="assets\images\about_us.webp" alt="Image representing Salzee Solutions team collaboration" class="rounded-xl shadow-2xl w-full max-w-lg transform hover:scale-[1.02] transition duration-500 ease-in-out">
+        <img src="assets/images/about_us.webp" alt="Image representing Salzee Solutions team collaboration" class="rounded-xl shadow-2xl w-full max-w-lg transform hover:scale-[1.02] transition duration-500 ease-in-out">
       </div>
     </div>
   </section>

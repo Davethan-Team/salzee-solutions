@@ -199,7 +199,7 @@ foreach ($service_pillars as $pillar) {
             <div class="order-1 lg:order-2">
                 <!-- Placeholder image representing abstract IT strategy/data flow for a non-flat look -->
                 <img 
-                    src="assets\images\services_hero_section.webp" 
+                    src="assets/images/services_hero_section.webp" 
                     alt="Abstract IT Strategy and Digital Network Flow" 
                     class="rounded-xl shadow-2xl w-full h-auto object-cover border border-teal-500" 
                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/333333/0097A7?text=DATA+FLOW+%7C+STRATEGY';">
